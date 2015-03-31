@@ -19,7 +19,7 @@ ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
 RUN pip install pip --upgrade
 #RUN pip install "ipython[notebook]"
-pip install -U "ipython[notebook]"
+RUN pip install -U "ipython[notebook]"
 RUN pip install -U nltk
 RUN pip install pandas
 
