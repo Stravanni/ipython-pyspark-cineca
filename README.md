@@ -45,7 +45,7 @@ BoxManage modifyvm boot2docker-vm --memory 4096
 ### IPython and PySpark
 Launching the container the first command issued is:
 ```
-IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" /usr/local/spark/bin/pyspark
+IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" /usr/local/spark/bin/pyspark stravanni/ipython-pyspark-cineca
 ```
 The IPython notebook will already have the *sparkContext* variable `sc`.
 Write `sc.version` to see what verison is loaded.
