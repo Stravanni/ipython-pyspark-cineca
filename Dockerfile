@@ -28,4 +28,5 @@ VOLUME /notebooks
 WORKDIR /notebooks
 
 EXPOSE 8888
-CMD IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark
+
+CMD /etc/bootstrap.sh && IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark
