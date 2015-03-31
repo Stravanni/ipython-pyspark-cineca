@@ -17,10 +17,10 @@ ENV SPARK_JAR hdfs:///spark/spark-assembly-1.3.0-hadoop2.4.0.jar
 ENV SPARK_HOME /usr/local/spark
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
-RUN pip install -U pip
-RUN pip install -q ipython[all]
-RUN pip install -U nltk
-RUN pip install pandas
+RUN pip install pip --upgrade
+RUN pip2.7 install ipython[notebook]
+RUN pip2.7 install -U nltk
+RUN pip2.7 install pandas
 
 RUN mkdir /notebooks
 VOLUME /notebooks
