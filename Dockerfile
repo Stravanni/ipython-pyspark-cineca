@@ -18,9 +18,10 @@ ENV SPARK_HOME /usr/local/spark
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
 RUN pip install pip --upgrade
-RUN pip2.7 install ipython[notebook]
-RUN pip2.7 install -U nltk
-RUN pip2.7 install pandas
+#RUN pip install "ipython[notebook]"
+pip install -U "ipython[notebook]"
+RUN pip install -U nltk
+RUN pip install pandas
 
 RUN mkdir /notebooks
 VOLUME /notebooks
