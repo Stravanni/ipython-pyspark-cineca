@@ -26,5 +26,9 @@ RUN pip install -q ipython[all]
 RUN pip install -U nltk
 RUN pip install pandas
 
+RUN mkdir /notebooks
+VOLUME /notebooks
+WORKDIR /notebooks
+
 EXPOSE 8888
 CMD IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark
