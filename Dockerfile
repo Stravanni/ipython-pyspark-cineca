@@ -16,6 +16,8 @@ ENV YARN_CONF_DIR $HADOOP_PREFIX/etc/hadoop
 ENV SPARK_JAR hdfs:///spark/spark-assembly-1.3.0-hadoop2.4.0.jar
 ENV SPARK_HOME /usr/local/spark
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
+ENV PYTHONPATH $SPARK_HOME/python/:$PYTHONPATH
+ENV PYTHONPATH $SPARK_HOME/python/lib/py4j-0.8.2.1-src.zip:$PYTHONPATH
 
 RUN pip install pip --upgrade
 #RUN pip install "ipython[notebook]"
@@ -30,4 +32,4 @@ WORKDIR /notebooks
 
 EXPOSE 8888
 
-CMD /etc/bootstrap.sh && IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark
+CMD /etc/bootstrap.sh && IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark && /usr/local/spark/sbin/start-master.sh
