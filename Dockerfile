@@ -32,4 +32,4 @@ WORKDIR /notebooks
 
 EXPOSE 8888
 
-CMD /etc/bootstrap.sh && IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark && /usr/local/spark/sbin/start-master.sh
+CMD /etc/bootstrap.sh && /usr/local/spark/sbin/start-master.sh && IPYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --port 8888" pyspark
