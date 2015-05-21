@@ -7,16 +7,16 @@ The *localFolder* is located on the desktop and you can use it to share file wit
 docker run -d -p 8888:8888 -p 8080:8080 -v ~/Desktop/localFolder/:/notebooks --name pyspark cineca/spark-ipython
 ```
 
-- `-d` deamon mode
+- `-d` detached mode
 - `-p` port
 - `-v` volume
 - `--name` give a name to the containers
 
 ### Launch the notebook
-Open the brawser at [localhost:8888](localhost:8888)
+Open the browser at [localhost:8888](localhost:8888)
 
 ### Launch the Spark web UI
-Open the brawser at [localhost:8080](localhost:8888)
+Open the browser at [localhost:8080](localhost:8888)
 
 ### On Mac OSX
 On Mac, remember that the actual VB ip can be finded with `boot2docker ip`.

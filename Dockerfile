@@ -26,9 +26,14 @@ RUN pip install -U "ipython[notebook]"
 RUN pip install -U nltk
 RUN pip install pandas
 
+#RUN mkdir /exercises && cd /exercises && git clone https://github.com/gfiameni/course-exercises
+
 RUN mkdir /notebooks
+#RUN cp -r /exercises/course-exercises/spark/2015_April/* /notebooks
+
 VOLUME /notebooks
 WORKDIR /notebooks
+
 
 EXPOSE 8888
 
